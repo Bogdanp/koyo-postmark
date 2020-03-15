@@ -11,16 +11,17 @@
 @defmodule[koyo/mail/postmark]
 
 @(define postmark-url "https://postmarkapp.com")
+@(define postmark-link (link postmark-url "Postmark"))
 @(define adapter-tech (tech #:doc '(lib "koyo/scribblings/koyo.scrbl") "mail adapter"))
 
-This package exposes a koyo @adapter-tech for interfacing with
-@link[postmark-url]{Postmark}.
+This package exposes a koyo @adapter-tech for interfacing with @|postmark-link|.
 
-@deftogether[(
-  @defproc[(make-postmark-mail-adapter [client postmark?]) mail-adapter?]
-  @defproc[(postmark-mail-adapter? [v any/c]) boolean?]
-)]{
+@section{Reference}
 
-  A @adapter-tech that uses the @link[postmark-url]{Postmark} API to
-  send e-mail.
+@defproc[(postmark-mail-adapter? [v any/c]) boolean?]{
+  Returns @racket[#t] when @racket[v] is a Postmark @|adapter-tech|.
+}
+
+@defproc[(make-postmark-mail-adapter [client postmark?]) mail-adapter?]{
+  Creates a @adapter-tech that uses the @|postmark-link| API to send e-mail.
 }

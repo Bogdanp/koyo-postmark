@@ -7,4 +7,6 @@
 (define deps '("base"
                "koyo-lib"
                "postmark-client"))
-(define build-deps '("scribble-lib"))
+(define build-deps '("koyo-doc"
+                     "racket-doc"
+                     "scribble-lib"))
